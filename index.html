@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Seminar Message Generator</title>
+<!--<link rel="stylesheet" href="./src/reset.css"> -->
+    <link rel="stylesheet" href="./src/styles.css">
+    <script type="text/javascript" defer src="./src/scripts.js"></script>
+</head>
+<body>
+
+<div class="left-col">
+    <h1>Generator</h1>
+    <label><b>Sender Name:</b></label>
+    <input type="text" id="senderName" placeholder="Enter your name">
+    
+    <label style="display:block; margin-top:15px;"><b>Script Template:</b></label>
+    <textarea id="scriptTemplate" rows="6" readonly>Hi, this is ${sender} from the Living Trust Seminar. I am texting to confirm your attendance for the seminar over at ${item.Venue} in ${item.Location} at ${item.Time} tomorrow. ${item.Host} will be your seminar host and looks forward to meeting you! Can you please confirm that you'll be able to attend?</textarea>
+    <button id="lockBtn" onclick="toggleLock()">Unlock Script</button>
+    <button onclick="resetScript()">Reset to Default</button>
+
+    <div id="app" style="margin-top:20px;"></div>
+    <button onclick="addObject()">+ Add New Object</button>
+    <button onclick="generateMessages()" style="background: green; color: white; padding: 10px; width: 100%; margin-top: 20px; border:none; cursor:pointer;">Generate Messages</button>
+</div>
+
+<div class="right-col" id="output">
+    <h3>Generated Messages</h3>
+</div>
+
+
+</body>
+</html>
